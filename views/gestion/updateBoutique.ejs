@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://drive.google.com/file/d/1J_JxwxW52ldZLVlZ-35Tv2bNqLRsKWHP/view?usp=sharing"
+    />
+  </head>
+  <body>
+    <header class="container">
+        <img src="/images/logo_transparent.png" alt="" />       
+          <nav class="navbar"> 
+              <h1 id="headerTitre">Planète T-shirt</h1>
+              <label for="btn" class="icon">
+                <svg viewBox="0 0 100 80" width="40" height="40" >
+                  <rect width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                  <rect y="35" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                  <rect y="70" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                </svg>
+              </label>
+              <input type="checkbox" id="btn">
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/acceuil">Acceuil</a></li>
+          <li class="nav-item"><a href="/catalogue">Catalogue</a></li>
+          <li class="nav-item"><a href="/panier">Panier</a></li>
+          <% if(user===null) { %>
+          <li class="nav-item"><a href="/connection">Connexion</a></li>
+          <% } else{ %>
+          <li class="nav-item"><a href="/profil">Profil</a></li>
+          <% } %>
+          <li class="nav-item"><a href="/boutiques">boutiques</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="create">
+        <h1>Modifier Boutique : <%= boutique.libelle %></h1>
+        <form action="/boutique/update/<%= boutique._id  %>" method="POST">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Libelle</label> <br>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="libelle"
+              required
+              value="<%= boutique.libelle %>"
+            />
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Adresse</label> <br>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="adress"
+              required
+              value="<%= boutique.adress %>"
+            />
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ville</label> <br>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="city"
+              required
+              value="<%= boutique.city %>"
+            />
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Téléphone</label> <br>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="telephone"
+              required
+              value="<%= boutique.telephone %>"
+            />
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Code Postal</label
+            > <br>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="postal_code"
+              required
+              value="<%= boutique.postal_code %>"
+            />
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Description</label
+            > <br>
+            <textarea
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="description"
+              rows="4"
+              cols="30"
+            >
+            <%= boutique.description %>
+            </textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Modifier boutique
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer class="row" id="footer">           
+        <a class="col-sm-6 col-md-4 col-xl-3 mb-4" href="https://planette-thirt/contact.com/">
+          <img src="/images/logo_contact.png" alt="contact" />
+        </a>        
+    <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+      <ul class="row" id="ulFooter">
+        <div class="col-sm-6 col-md-4 col-xl-3 mb-4" >
+              <li  id="liInstagram">
+                <a href="https://instagram.com/"
+                  ><img src="/images/logo_instagram.png"  alt=""/>
+                </a>
+              </li>
+        </div>
+        <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+              <li id="liFacebook">
+                <a href="https://facebook.com/"
+                  ><img src="/images/logo_facebook.png"  alt=""
+                /></a>
+              </li>
+        </div>
+        <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+              <li id="liTwitter">
+                <a href="https://twitter.com/"
+                  ><img src="/images/logo_twitter.png"  alt=""
+                /></a>
+              </li>
+        </div>
+      </ul>
+    </div>      
+</footer>
+  </body>
+</html>

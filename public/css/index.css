@@ -1,0 +1,151 @@
+/*application de la forme sur toute la page*/
+
+* {
+/* border: 1px solid red; */
+  font-family: "jokerman";
+  color: #00adb5;
+}
+body {
+  color: #00adb5;
+  background-color: black;
+  margin:0;
+}
+ul {
+  /* width: 100%; */
+  display: flex;
+  list-style: none;
+}
+li {
+  margin-right: 5%;
+  cursor: pointer;
+  font-size: x-large;
+} 
+li:hover {
+  background-color: rgb(54, 54, 57);
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover{
+  background-color: rgb(54, 54, 57);
+}
+
+/*application sur l'entete de la page*/
+
+#headerTitre{
+  font-size:xxx-large;
+}
+
+header {
+    display: flex;
+}
+.icon,  #btn{
+  display: none;
+} 
+
+/*application quand l'ecarn est inferieur à 775px */
+
+@media screen and (max-width: 775px){
+  header {
+    justify-content: space-around;
+  }  
+  .navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .logo{
+    color: white;
+    font-size: 1.5rem;
+  }
+  .icon{
+    display: initial;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .navbar input, .nav-menu {
+    display: none;
+  }
+  #btn:checked + ul {
+    display: block;
+    opacity: 0.99;
+  }
+  .nav-menu{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 70px;
+    right: 0;
+    left: 0;
+    
+  }
+  .nav-item a{
+    line-height: 70px;
+    font-size: 2rem;
+    padding: 5px;
+  }
+}
+
+
+/* application sur le main*/
+
+main {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-block-end: 100px;
+}
+main .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+.card {
+    margin: 10px;
+}
+img{
+    max-width: 250px;
+}
+div.mb-4{
+  margin-right: 10px;
+}
+.taille{
+  display: flex;
+}
+button{
+  height: 3rem;
+  width: auto;
+  margin: 5px;
+}
+.retour{
+  width: 5rem;
+  background-color: black;
+}
+.detail{
+  height: 10rem;  
+  width: 10rem;
+}
+
+/* application de la forme sur le footer*/
+
+footer {
+  background-color: #00adb5;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /*pour mettre le footer en bas de page*/
+  position: fixed;  
+  bottom: 0; 
+  left: 0; 
+  right: 0;
+
+}
+footer img {
+    width: 3rem;
+}

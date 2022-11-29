@@ -1,0 +1,170 @@
+/*application de la forme sur toute la page*/
+* {
+  /* border: 1px solid red; */
+  font-family: "jokerman";
+  /* color: #00adb5; */
+}
+body {
+  color: #00adb5;
+  background-color: black;
+}
+ul {
+  display: flex;
+  list-style: none;
+}
+li {
+  margin-right: 30px;
+  cursor: pointer;
+}
+li:hover {
+  background-color: rgb(54, 54, 57);
+}
+
+/*application de la forme sur le header*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#headerDiv {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+/*application de la forme sur le contenu*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-block-end: 10px;
+}
+svg {
+  width: 100px;
+  height: auto;
+}
+
+
+div {
+  max-width: 600px;
+}
+h1 {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #00adb5;
+}
+
+.error-message {
+  color: red;
+}
+
+.buttonDescrptionBoutique{
+  margin-right: 10px;
+}
+
+.boutiqueDetail, .boutiqueDiv {
+  display: flex;
+}
+
+/*application sur le contenu de cataloque*/
+main img {
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
+.bi-trash {
+  width: 20px;
+  height: auto;
+}
+.articleDetail {
+  background-color: black;
+  color: white;
+}
+.article {
+  display: flex;
+}
+.articleImg {
+  display: inline;
+}
+.aArticle {
+  margin-top: 150px;
+}
+/* #articleMain {
+  display: flex;
+} */
+.bouttonDetailArticle,
+.bouttonDetailBoutique {
+  background-color: black;
+  color: white;
+}
+.taille {
+  display: flex;
+  flex-direction: row;
+}
+.form-check-inline {
+  padding-right: 10px;
+}
+.ajoutPanier {
+  height: 50px;
+  width: auto;
+}
+.retourCatalogue,
+.retourBoutique {
+  /* height: 50px; */
+  /* width: auto; */
+  background-color: black;
+  color: white;
+  margin-left: 250px;
+  box-shadow: 1px 3px 2px lightgray;
+  padding: 10px;
+  border-radius: 10px;
+}
+.bi-arrow-return-left {
+  height: 20px;
+}
+
+/*application de la forme sur le panier*/
+.order{
+  display:inline-flex
+}
+.prod_img{
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+/*application de la forme sur la partie gestion admin*/
+
+.logoUpdate {
+  width: 20px;
+  height: auto;
+}
+.gestion-edit{
+  display: flex;
+  flex-direction: row;
+}
+
+/*application de la forme sur le footer*/
+footer {
+  background-color: #00adb5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#divFooter {
+  display: flex;
+  background-color: #00adb5;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+ul#ulFooter {
+  display: flex;
+  background-color: #00adb5;
+}
+footer img {
+  max-width: 50px;
+}

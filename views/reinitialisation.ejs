@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenue sur planète tshirt | reinitialisation du mot de passe</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://drive.google.com/file/d/1J_JxwxW52ldZLVlZ-35Tv2bNqLRsKWHP/view?usp=sharing"
+    />
+    <script src="../JS/class/Menu.js" defer></script>
+  </head>
+  <body>
+    <header class="container">
+      <img src="/images/logo_transparent.png" alt="" />       
+        <nav class="navbar"> 
+            <h1 id="headerTitre">Planète T-shirt</h1>
+            <label for="btn" class="icon">
+              <svg viewBox="0 0 100 80" width="40" height="40" >
+                <rect width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                <rect y="35" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                <rect y="70" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+              </svg>
+            </label>
+            <input type="checkbox" id="btn">
+
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/acceuil">Acceuil</a></li>
+          <li class="nav-item"><a href="/catalogue">Catalogue</a></li>
+          <li class="nav-item"><a href="/panier">Panier</a></li>
+          <li class="nav-item"><a href="/connexion">Connexion</a></li>
+          <li class="nav-item"><a href="/boutiques">boutiques</a></li>
+        </ul>
+      </div>
+    </header>
+    <main id="reinitialisationMotPass">
+      <div class="password">
+        <h1>réinitialiser votre mot de passe</h1>
+        <p class="password_text">
+          Vous avez perdu votre mot de passe? Veuillez saisir votre adresse
+          électronique. Vous recevrez un lien pour créer un nouveau mot de passe
+          par e-mail.
+        </p>
+        <form action="/reset_password" method="post" class="row g-3">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">
+              Réinitialisation du mot de passe
+            </button>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="reset" id="retourConnexion">
+              <a href="/connexion"> Annulé</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="row" id="footer">           
+      <a class="col-sm-6 col-md-4 col-xl-3 mb-4" href="https://planette-thirt/contact.com/">
+        <img src="images/logo_contact.png" alt="contact" "/>
+      </a>        
+  <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+    <ul class="row" id="ulFooter">
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4" >
+            <li  id="liInstagram">
+              <a href="https://instagram.com/"
+                ><img src="images/logo_instagram.png" alt=""/>
+              </a>
+            </li>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+            <li id="liFacebook">
+              <a href="https://facebook.com/"
+                ><img src="images/logo_facebook.png" alt=""
+              /></a>
+            </li>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+            <li id="liTwitter">
+              <a href="https://twitter.com/"
+                ><img src="images/logo_twitter.png" " alt=""
+              /></a>
+            </li>
+      </div>
+    </ul>
+  </div>      
+</footer>
+  </body>
+</html>

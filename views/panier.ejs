@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenue sur planète tshirt | panier</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://drive.google.com/file/d/1J_JxwxW52ldZLVlZ-35Tv2bNqLRsKWHP/view?usp=sharing"
+    />
+    <script src="/js/catalogue.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <img src="/images/logo_transparent.png" alt="" />
+
+      <nav class="navbar"> 
+        <h1 id="headerTitre">Planète T-shirt</h1>
+
+        <label for="btn" class="icon">
+          <svg viewBox="0 0 100 80" width="40" height="40" >
+            <rect width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+            <rect y="35" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+            <rect y="70" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+          </svg>
+        </label>
+        <input type="checkbox" id="btn">
+      
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/acceuil">Acceuil</a></li>
+          <li class="nav-item"><a href="/catalogue">Catalogue</a></li>
+          <li class="nav-item"><a href="/panier">Panier</a></li>
+          <% if(user===null) { %>
+          <li class="nav-item"><a href="/connexion">Connexion</a></li>
+          <% } else{ %>
+          <li class="nav-item"><a href="/profil">profil</a></li>
+          <% } %>
+          <li class="nav-item"><a href="/boutiques">boutiques</a></li>
+        </ul>
+     
+    </header>
+
+    <main id="panier">
+      <h1>Panier</h1>
+      <h2 class="error-message"><%= panier_error %></h2>
+      <div class="lignePanier">
+        <h2>Prix Total : <%= panier.totalprice %> €</h2>
+        <br />
+        <div class="container-x1">
+          <div class="row">
+            <% orders.forEach((order)=>{ %>
+            <div lass="col-sm-6 col-md-4 col-xl-3 mb-4">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="<%= order.idProduit.image %>" />                
+                  <h2 class="card-title">
+                    <%= order.idProduit.libelle %>
+                    <a href="/panier/delete_order/<%= order._id %>">
+                      <svg xmlns="http://www.w3.org/2000/svg"b width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" >
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 
+                        .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 
+                        1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                        />
+                      </svg>
+                    </a>
+                  </h2>
+                  <p class="card-text">taille : <%= order.size %></p>
+                  <p class="card-text">tarif : <%= order.idProduit.price %> €</p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+      <h2>Valider Panier</h2>
+      <form action="/panier/validate" method="post">
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Selectionner une boutique</label>
+          <br />
+          <select class="form-control" name="boutique" required>
+            <% boutiques.forEach((boutique)=>{ %>
+            <option value="<%= boutique._id  %>">
+              <%= boutique.libelle %>
+            </option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label"
+            >Date de ramassage
+          </label>
+          <br />
+          <input type="date" class="form-control" id="validationCustom01" name="pick_up_date" required
+          />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </div>
+      </form>      
+      <h2><a href="/panier/historique"> Voir historique </a></h2>
+    </main>
+
+    <footer class="row" id="footer">           
+      <a class="col-sm-6 col-md-4 col-xl-3 mb-4" href="https://planette-thirt/contact.com/">
+        <img src="images/logo_contact.png" alt="contact" "/>
+      </a>        
+  <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+    <ul class="row" id="ulFooter">
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4" >
+            <li  id="liInstagram">
+              <a href="https://instagram.com/"
+                ><img src="images/logo_instagram.png" alt=""/>
+              </a>
+            </li>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+            <li id="liFacebook">
+              <a href="https://facebook.com/"
+                ><img src="images/logo_facebook.png" alt=""
+              /></a>
+            </li>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+            <li id="liTwitter">
+              <a href="https://twitter.com/"
+                ><img src="images/logo_twitter.png" " alt=""
+              /></a>
+            </li>
+      </div>
+    </ul>
+  </div>      
+</footer>
+  </body>
+</html>

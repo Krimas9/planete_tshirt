@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenue sur planète tshirt | boutique</title>
+  </head>
+  <link rel="stylesheet" href="/css/index.css" />
+  <link
+    rel="stylesheet"
+    href="https://drive.google.com/file/d/1J_JxwxW52ldZLVlZ-35Tv2bNqLRsKWHP/view?usp=sharing"
+  />
+  <script src="/JS/boutique.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <body>
+    <header class="container">
+      <img src="/images/logo_transparent.png" alt="" />       
+        <nav class="navbar"> 
+            <h1 id="headerTitre">Planète T-shirt</h1>
+            <label for="btn" class="icon">
+              <svg viewBox="0 0 100 80" width="40" height="40" >
+                <rect width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                <rect y="35" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+                <rect y="70" width="100" height="15" stroke="#00adb5" fill="#00adb5"></rect>
+              </svg>
+            </label>
+            <input type="checkbox" id="btn">
+
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="/acceuil">Acceuil</a></li>
+          <li class="nav-item"><a href="/catalogue">Catalogue</a></li>
+          <li class="nav-item"><a href="/panier">Panier</a></li>
+          <% if(user===null) { %>
+          <li class="nav-item"><a href="/connexion">Connexion</a></li>
+          <% } else{ %>
+          <li class="nav-item"><a href="/profil">profil</a></li>
+          <% } %>
+          <li class="nav-item"><a href="/boutiques">boutiques</a></li>
+        </ul>
+      </div>
+    </header>
+    <main id="boutiques">
+        <h1>boutique</h1>
+        <h1><%= boutique_error %></h1>
+          <h1 class="boutique_titre"><%= boutique.libelle %></h1>
+          <div class="boutiqueDetail">
+           
+            <div id="boutique_adresse">
+              <img
+                id="logo_boutique"
+                src="/images/logo_boutique.png"
+                alt="logo boutique"
+              />
+              <p id="boutique_adresse">
+                <%= boutique.adress %> <br />
+                <%= boutique.postal_code %>
+                <%= boutique.city %> <br />
+                <%= boutique.telephone %>
+              </p>
+            </div>
+          </div> 
+          <div id="boutique_horraire"><%- boutique.description %></div> <br>
+          <button class="retour">
+            <a href="/boutiques">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-arrow-return-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
+                />
+              </svg>
+            </a>
+          </button>   
+          <br>       
+    </main>
+
+    <footer class="row" id="footer">           
+      <a class="col-sm-6 col-md-4 col-xl-3 mb-4" href="https://planette-thirt/contact.com/">
+        <img src="/images/logo_contact.png" alt="contact" "/>
+      </a>        
+  <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+    <ul class="row" id="ulFooter">
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4" >
+            <li  id="liInstagram">
+              <a href="https://instagram.com/"
+                ><img src="/images/logo_instagram.png" alt=""/>
+              </a>
+            </li>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+            <li id="liFacebook">
+              <a href="https://facebook.com/"
+                ><img src="/images/logo_facebook.png" alt=""
+              /></a>
+            </li>
+      </div>
+      <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+            <li id="liTwitter">
+              <a href="https://twitter.com/"
+                ><img src="/images/logo_twitter.png" " alt=""
+              /></a>
+            </li>
+      </div>
+    </ul>
+  </div>      
+</footer>
+
+  </body>
+</html>
